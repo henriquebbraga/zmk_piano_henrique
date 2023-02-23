@@ -9,6 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
+#define MOVE_UP_H MOVE_VERT(-1200)
+#define MOVE_DOWN_H MOVE_VERT(1200)
+#define MOVE_LEFT_H MOVE_HOR(-1200)
+#define MOVE_RIGHT_H MOVE_HOR(1200)
 
 
 &mt {
@@ -134,8 +138,8 @@
 
 		mouse1 {
 		bindings = <
-				 	&mkp  MB3		&mkp MB2 	  &mkp MB1		&mmv MOVE_LEFT 	  &mmv MOVE_UP 		&mmv MOVE_RIGHT 			
-		&none	&none		    &none 	    &none		    &kp LS(LC(TAB))  	&mmv MOVE_DOWN 	&kp LC(TAB) 	     &none 
+				 	&mkp  MB3		&mkp MB2 	  &mkp MB1		&mmv MOVE_LEFT_H 	  &mmv MOVE_UP_H 		&mmv MOVE_RIGHT_H 			
+		&none	&none		    &none 	    &none		    &kp LS(LC(TAB))  	&mmv MOVE_DOWN_H 	&kp LC(TAB) 	     &none 
 		 			 		 				&trans 		  &mo MOU2    &to AL1           &trans		
 		>;
 		};
