@@ -38,7 +38,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_L";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <220>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -47,7 +47,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_R";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <220>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -91,9 +91,9 @@
                 
     alpha1 {
 		bindings = <
-		 		            &kp R 	      &hl_l NUM S 	  &hm_l LSHIFT T		&hm_r RSHIFT N 	&hl_r NUM E   &kp I	  
-		&hm_l LALT A	  &hm_l LCTRL L	&hm_l LGUI C	  &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H  &hm_r RGUI U  &hm_r RCTRL M  &hm_r RALT O
-			 	 		 		                  &hl_l MKEYS BKSP &alpha2macro      &alpha3macro	  &hl_r ASP SPC	 	
+		 		            &kp R 	      &hl_l NUM S 	    &hm_l LSHIFT T		  &hm_r RSHIFT N 	  &hl_r NUM E   &kp I	  
+		&hm_l LALT A	  &hm_l LCTRL L	&hm_l LGUI C	    &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H   &hm_r RGUI U  &hm_r RCTRL M  &hm_r RALT O
+			 	 		 		                  &hl_l MKEYS BKSP  &alpha2macro        &alpha3macro	    &hl_r ASP SPC	 	
 		>;
 		};
 
@@ -109,7 +109,7 @@
 		bindings = <
 		 	 	    &kp W 		&kp F		&kp P	 	 	&kp EQUAL    	          &kp BACKSLASH			  &kp SLASH 		
 		&kp Q	 	&kp X 		&kp K		&kp V 		&kp RIGHT_PARENTHESIS 	&kp RIGHT_BRACE			&kp RIGHT_BRACKET		&kp SEMICOLON 
-			 	 		 		      &trans	&to NUM   &sl BT                  &trans
+			 	 		 		      &trans	&to NUM   &none                  &trans
 		>;
 		};
 		
@@ -117,7 +117,7 @@
 		bindings = <
 				    &kp N2 	&kp N3	  &mt LSHIFT N4 		&mt RSHIFT N7 	&kp N8		   &kp N9	
 		&kp N1	&none 	&none		  &kp N5		        &kp N6		      &kp COMMA	   &kp DOT   	&kp N0
-							      &trans 		&none 		        &to AL1 	      &trans  	 
+							      &trans 		&to BT 		        &to AL1 	      &trans  	 
 		>;
 		};
 
@@ -133,7 +133,7 @@
 		bindings = <
 				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_LEFT 	&mwh SCROLL_UP 		&mwh SCROLL_RIGHT 			
 		&kp LG(LS(N4))	&none		    &none 	    &none		    &none  		        &mwh SCROLL_DOWN 	&none 	            &none 
-		 			 		 				          &none 		  &none       &none             &none	
+		 			 		 				          &none 		  &none       &to AL1             &none	
 		>;
 		};
 
@@ -147,8 +147,8 @@
 
 		bt {
 		bindings = <
-				            &bt BT_PRV	&bt BT_NXT	&none 			&none 	&none	  &none	
-		&bootloader  	  &none 		  &none 		  &none 			&none 	&none 	&none	  &bt BT_CLR
+				            &bt BT_PRV	&bt BT_NXT	&none 			&bt BT_SEL 0 	&none	  &none	
+		&bootloader  	  &none 		  &none 		  &none 			&none 	      &none 	&none	  &bt BT_CLR
 		 	 	 				    &none	      &none       &to AL1	    &none
 		>;
 		};
@@ -156,7 +156,7 @@
     alpha2cap {
 		bindings = <
 		 	 	        &kp LS(W)	  &kp LS(F)	  &kp LS(P) 	&kp LS(G)   &kp LS(J)		  &kp LS(Y)	
-		&kp LS(Q) 	&kp LS(X) 	&kp LS(C)	  &kp LS(V)		&kp LS(B)	  &kp LS(COMMA)	&kp LS(DOT)	&kp LS(Z) 
+		&kp LS(Q) 	&kp LS(X) 	&kp LS(K)	  &kp LS(V)		&kp LS(B)	  &kp LS(COMMA)	&kp LS(DOT)	&kp LS(Z) 
 			 	                    &none 		  &none 			&none	      &none
 		>;
 		};
