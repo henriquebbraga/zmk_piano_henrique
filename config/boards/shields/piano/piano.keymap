@@ -164,8 +164,8 @@
 
 		alphaspecials {
 		bindings = <
-				 	      &kp  LG(A)	&kp LG(V) 	&kp LG(C)		    &kp LC(LEFT) 	&mwh SCROLL_UP 		&kp LC(RIGHT) 			
-		&kp LG(Z)	  &none		    &none 	    &kp LSHIFT		  &none  		    &none 	          &none 	          &none 
+				 	      &kp  LG(A)	&kp LG(V) 	&kp LG(C)		    &kp LC(LEFT) 	&none 		&kp LC(RIGHT) 			
+		&kp LG(Z)	  &none		    &none 	    &kp LSHIFT		  &none  		    &none 	  &none 	          &none 
 		 			 		 				      &none 		  &key_repeat     &none         &none		
 		>;
 		};
@@ -189,7 +189,7 @@
 		mainkeys {
 		bindings = <
 				 	      &kp LCTRL		&kp LGUI 	&kp LSHIFT		&kp LEFT 	      &kp UP 		  &kp RIGHT 			
-		&kp LALT	  &none		    &none 	  &none		      &kp LALT(LEFT)  &kp DOWN  	&kp LALT(RIGHT) 	&none 
+		&kp LALT	  &none		    &none 	  &none		      &kp LA(LEFT)    &kp DOWN  	&kp LA(RIGHT) 	&none 
 		 			 		 				      &none 		&none         &kp ENTER       &kp TAB		
 		>;
 		};
