@@ -9,10 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define MOVE_UP_H MOVE_VERT(-1200)
-#define MOVE_DOWN_H MOVE_VERT(1200)
-#define MOVE_LEFT_H MOVE_HOR(-1200)
-#define MOVE_RIGHT_H MOVE_HOR(1200)
+#define M_MOVE_SPEED 1500
+
+#define MOVE_UP_H MOVE_VERT(-M_MOVE_SPEED)
+#define MOVE_DOWN_H MOVE_VERT(M_MOVE_SPEED)
+#define MOVE_LEFT_H MOVE_HOR(-M_MOVE_SPEED)
+#define MOVE_RIGHT_H MOVE_HOR(M_MOVE_SPEED)
 
 
 &mt {
@@ -25,12 +27,12 @@
  };
 &mmv {
   delay-ms = <0>;
-  time-to-max-speed-ms = <1000>;
+  time-to-max-speed-ms = <500>;
   acceleration-exponent = <1>;
 };
 &mwh {
   delay-ms = <0>;
-  time-to-max-speed-ms = <1000>;
+  time-to-max-speed-ms = 200>;
   acceleration-exponent = <1>;
 };
  
