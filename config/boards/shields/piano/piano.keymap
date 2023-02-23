@@ -82,12 +82,6 @@
 		#binding-cells = <0>;
 		bindings = < &sl AL3 >;
 	};
-	caps_alpha2macro: behavior_macro_3 {
-		compatible = "zmk,behavior-macro";
-		label = "MACRO3";
-		#binding-cells = <0>;
-		bindings = < &sl AL2CAPS >;
-	};
     };
 // 				0		1		2					3		4			5
 // 		6		7		8		9 					10		11			12 		13
@@ -98,7 +92,7 @@
     alpha1 {
 		bindings = <
 		 		            &kp R 	      &hl_l NUM S 	  &hm_l LSHIFT T		&hm_r RSHIFT N 	&hl_r NUM E   &kp I	  
-		&hm_l LALT A	  &hm_l LCTRL L	&hm_l LGUI C	  &hl_l A2CAPS D 	 	&hl_r A2CAPS H  &hm_r RGUI U  &hm_r RCTRL M  &hm_r RALT O
+		&hm_l LALT A	  &hm_l LCTRL L	&hm_l LGUI C	  &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H  &hm_r RGUI U  &hm_r RCTRL M  &hm_r RALT O
 			 	 		 		                  &hl_l MKEYS BKSP &alpha2macro      &alpha3macro	  &hl_r ASP SPC	 	
 		>;
 		};
