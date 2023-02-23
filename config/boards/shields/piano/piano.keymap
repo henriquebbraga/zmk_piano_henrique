@@ -83,6 +83,17 @@
 		bindings = < &sl AL3 >;
 	};
     };
+
+    &mmv {
+      delay-ms = <0>;
+      time-to-max-speed-ms = <1000>;
+      acceleration-exponent = <1>;
+    }
+    &mhw {
+      delay-ms = <0>;
+      time-to-max-speed-ms = <1000>;
+      acceleration-exponent = <1>;
+    }
 // 				0		1		2					3		4			5
 // 		6		7		8		9 					10		11			12 		13
 //								14	15 	16 	17		
@@ -131,8 +142,9 @@
 
 		mouse2 {
 		bindings = <
-				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_LEFT 	&mwh SCROLL_UP 		&mwh SCROLL_RIGHT 			
-		&kp LG(LS(N4))	&none		    &none 	    &none		    &none  		        &mwh SCROLL_DOWN 	&none 	            &none 
+				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_RIGHT &mwh SCROLL_DOWN 		&mwh SCROLL_LEFT
+		&kp LG(LS(N4))	&none		    &none 	    &none		    &none  		        &mwh SCROLL_UP    	&none 	            &none 
+
 		 			 		 				          &none 		  &none       &to AL1             &none	
 		>;
 		};
@@ -164,7 +176,7 @@
 		mainkeys {
 		bindings = <
 				 	      &kp LCTRL		&kp LGUI 	&kp LSHIFT		&kp LEFT 	      &kp UP 		  &kp RIGHT 			
-		&kp LALT	  &none		    &none 	  &none		      &kp LA(LEFT)    &kp DOWN  	&kp LA(RIGHT) 	&none 
+		&kp LALT	  &none		    &none 	  &none		      &kp LA(LEFT)    &kp DOWN  	&kp LA(RIGHT) 	&kp ESC 
 		 			 		 				      &none 		&none         &kp ENTER       &kp TAB		
 		>;
 		};
