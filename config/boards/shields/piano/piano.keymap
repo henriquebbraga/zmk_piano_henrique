@@ -34,13 +34,13 @@
 &mmv {
   delay-ms = <0>;
   time-to-max-speed-ms = <500>;
-  acceleration-exponent = <2>;
+  acceleration-exponent = <1>;
 };
 
 &mwh {
   delay-ms = <0>;
-  time-to-max-speed-ms = <200>;
-  acceleration-exponent = <2>;
+  time-to-max-speed-ms = <500>;
+  acceleration-exponent = <1>;
 };
  
 /* Layers */
@@ -155,8 +155,8 @@
 
 		mouse2 {
 		bindings = <
-				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_RIGHT_H &mwh SCROLL_DOWN_H 		&mwh SCROLL_LEFT_H
-		&kp LG(LS(N4))	&none		    &none 	    &none		    &kp LG(LEFT)  		  &mwh SCROLL_UP_H    	&kp LG(RIGHT) 	            &none 
+				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_LEFT_H &mwh SCROLL_UP_H 		&mwh SCROLL_RIGHT_H
+		&kp LG(LS(N4))	&none		    &none 	    &none		    &kp LG(LEFT)  		  &mwh SCROLL_DOWN_H    	&kp LG(RIGHT) 	            &none 
 
 		 			 		 				          &none 		  &none       &to AL1             &none	
 		>;
