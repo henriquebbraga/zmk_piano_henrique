@@ -127,7 +127,7 @@
 		bindings = <
 		 	 	                &kp LEFT_BRACKET 	&kp LEFT_BRACE	&kp LEFT_PARENTHESIS	&kp G    	&kp J			    &kp Y 		
 		&kp DOUBLE_QUOTES	 	&kp GRAVE		      &kp MINUS		    &kp SINGLE_QUOTE 			&kp B 		&kp COMMA			&kp DOT		&kp Z 
-			 	 		 		                          &trans	        &to MOU1              &none     &trans
+			 	 		 		                          &trans	        &to MOU1              &to  AL1     &trans
 		>;
 		};
 
@@ -135,7 +135,7 @@
 		bindings = <
 		 	 	    &kp W 		&kp F		&kp P	 	 	&kp EQUAL    	          &kp BACKSLASH			  &kp SLASH 		
 		&kp Q	 	&kp X 		&kp K		&kp V 		&kp RIGHT_PARENTHESIS 	&kp RIGHT_BRACE			&kp RIGHT_BRACKET		&kp SEMICOLON 
-			 	 		 		      &trans	&to NUM   &none                  &trans
+			 	 		 		      &trans	&to NUM   &none                  &to AL1
 		>;
 		};
 		
