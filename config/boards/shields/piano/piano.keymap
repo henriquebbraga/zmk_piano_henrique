@@ -9,17 +9,19 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define M_MOVE_SPEED 1500
+#define M_MOVE_SPEED 1600
 #define MOVE_UP_H MOVE_VERT(-M_MOVE_SPEED)
 #define MOVE_DOWN_H MOVE_VERT(M_MOVE_SPEED)
 #define MOVE_LEFT_H MOVE_HOR(-M_MOVE_SPEED)
 #define MOVE_RIGHT_H MOVE_HOR(M_MOVE_SPEED)
 
-#define M_SCROLL_SPEED 20
+#define M_SCROLL_SPEED 5
 #define SCROLL_UP_H SCROLL_VERT(-M_SCROLL_SPEED)
 #define SCROLL_DOWN_H SCROLL_VERT(M_SCROLL_SPEED)
 #define SCROLL_LEFT_H SCROLL_HOR(-M_SCROLL_SPEED)
 #define SCROLL_RIGHT_H SCROLL_HOR(M_SCROLL_SPEED)
+
+#define SCROLL_UP_FAST SCROLL_VERT(-30)
 
 
 &mt {
@@ -39,8 +41,8 @@
 
 &mwh {
   delay-ms = <0>;
-  time-to-max-speed-ms = <500>;
-  acceleration-exponent = <1>;
+  time-to-max-speed-ms = <1000>;
+  acceleration-exponent = <2>;
 };
  
 /* Layers */
@@ -155,9 +157,8 @@
 
 		mouse2 {
 		bindings = <
-				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_LEFT_H &mwh SCROLL_UP_H 		&mwh SCROLL_RIGHT_H
-		&kp LG(LS(N4))	&none		    &none 	    &none		    &kp LG(LEFT)  		  &mwh SCROLL_DOWN_H    	&kp LG(RIGHT) 	            &none 
-
+				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_LEFT_H  &mwh SCROLL_UP_H 		&mwh SCROLL_RIGHT_H
+		&kp LG(LS(N4))	&none		    &none 	    &none		    &kp LG(LEFT)  		  &mwh SCROLL_DOWN_H  &kp LG(RIGHT) 	    &mwh SCROLL_UP_FAST
 		 			 		 				          &none 		  &none       &to AL1             &none	
 		>;
 		};
