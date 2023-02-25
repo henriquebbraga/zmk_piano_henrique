@@ -135,7 +135,7 @@
 		bindings = <
 		 	 	    &kp W 		&kp F		&kp P	 	 	&kp EQUAL    	          &kp BACKSLASH			  &kp SLASH 		
 		&kp Q	 	&kp X 		&kp K		&kp V 		&kp RIGHT_PARENTHESIS 	&kp RIGHT_BRACE			&kp RIGHT_BRACKET		&kp SEMICOLON 
-			 	 		 		      &trans	&to NUM   &none                  &to AL1
+			 	 		 		      &trans	&to NUM   &to AL1                  &trans
 		>;
 		};
 		
