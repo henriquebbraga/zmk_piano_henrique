@@ -63,7 +63,7 @@
 #define OC_BRACE LEFT_BRACE RIGHT_BRACE
 #define OC_BRACKET LEFT_BRACKET RIGHT_BRACKET
 
-#define NM(x) N ## x LS(N ## x ##)
+#define NMTD(x) N ## x LS(N ## x ##)
 
 / { 
 
@@ -177,9 +177,9 @@
 		
 		num {
 		bindings = <
-				        &td NM(2) 	&td N3	            &td NM(4) 		&td NM(7) 	&td NM(8)		&td NM(9)
-		&td NM(1)	&none 	    &kp MINUS		        &td NM(5)		&td NM(6)	&kp COMMA	    &kp DOT   	&td NM(0)
-							              &hl_l MKEYS BKSP 		&to FKEYS 		&to AL1 	  &hl_r ASP SPC  	 
+				        &td NMTD(2) 	  &td NMTD(3)	          &td NMTD(4) 		&td NMTD(7) 	&td NMTD(8)		&td NMTD(9)
+		&td NMTD(1)	&none 	        &kp MINUS		          &td NMTD(5)		  &td NMTD(6)	  &kp COMMA	    &kp DOT   	&td NMTD(0)
+		                            &hl_l MKEYS BKSP 		  &to FKEYS 		  &to AL1 	    &hl_r ASP SPC  	 
 		>;
 		};
 
