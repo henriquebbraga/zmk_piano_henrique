@@ -63,7 +63,7 @@
 #define OC_BRACE LEFT_BRACE RIGHT_BRACE
 #define OC_BRACKET LEFT_BRACKET RIGHT_BRACKET
 
-#define NMTD(x) N ## x LS(N ## x ##)
+#define NMTD(x) LS(N ## x ##) N ## x
 
 / { 
 
@@ -75,7 +75,7 @@
             tapping-term-ms = <120>;
             quick-tap-ms = <50>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
         thu_r: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
@@ -84,7 +84,7 @@
             tapping-term-ms = <120>;
             quick-tap-ms = <50>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
