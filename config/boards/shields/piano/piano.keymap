@@ -63,7 +63,7 @@
 #define OC_BRACE LEFT_BRACE RIGHT_BRACE
 #define OC_BRACKET LEFT_BRACKET RIGHT_BRACKET
 
-#define NM(x) { N ## x, LS(N ## x ## ) }
+#define NM(x) N ## x, LS(N ## x ## )
 
 / { 
 
