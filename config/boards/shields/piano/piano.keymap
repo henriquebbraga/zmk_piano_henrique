@@ -56,9 +56,36 @@
 #define BT      7	
 #define AL2CAPS 8
 #define MKEYS   9
+#define FKEYS   10
+
+// OC = OPEN and CLOSE
+#define OC_PARENTHESIS LEFT_PARENTHESIS RIGHT_PARENTHESIS
+#define OC_BRACE LEFT_BRACE RIGHT_BRACE
+#define OC_BRACKET LEFT_BRACKET RIGHT_BRACKET
+
+#define NUM(x) { #x, N ## x ## LS(N ## x ## ) }
+
 / { 
 
     behaviors {
+        thu_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_MODS_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <50>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        thu_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_MODS_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            quick-tap-ms = <50>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_L";
@@ -95,6 +122,15 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
+        td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 	alpha2macro: behavior_macro_1 {
 		compatible = "zmk,behavior-macro";
 		label = "MACRO1";
@@ -117,65 +153,65 @@
                 
     alpha1 {
 		bindings = <
-		 		            &kp R 	      &hl_l NUM S 	    &hm_l LSHIFT T		  &hm_r RSHIFT N 	  &hl_r NUM E   &kp I	  
-		&hm_l LALT A	  &hm_l LCTRL L	&hm_l LGUI C	    &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H   &hm_r RGUI U  &hm_r RCTRL M  &hm_r RALT O
-			 	 		 		                  &hl_l MKEYS BKSP  &alpha2macro        &alpha3macro	    &hl_r ASP SPC	 	
+		 		            &kp R 	      &hl_l NUM S 	      &hm_l LSHIFT T		  &hm_r RSHIFT N 	  &hl_r NUM E     &kp I	  
+		&hm_l LALT A	  &hm_l LCTRL L	&hm_l LGUI C	      &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H   &hm_r RGUI U    &hm_r RCTRL M  &hm_r RALT O
+			 	 		 		                  &thu_l MKEYS BKSP   &alpha2macro        &alpha3macro	    &thu_r ASP SPC	 	
 		>;
 		};
 
     alpha2 {
 		bindings = <
-		 	 	                &kp LEFT_BRACKET 	&kp LEFT_BRACE	&kp LEFT_PARENTHESIS	&kp G    	&kp J			    &kp Y 		
-		&kp DOUBLE_QUOTES	 	&kp GRAVE		      &kp MINUS		    &kp SINGLE_QUOTE 			&kp B 		&kp COMMA			&kp DOT		&kp Z 
-			 	 		 		                          &trans	        &to MOU1              &to  AL1     &trans
+		 	 	                &td OC_BRACKET 	  &td OC_BRACE	  &td OC_PARENTHESIS	  &kp G    	        &kp J			    &kp Y 		
+		&kp DOUBLE_QUOTES	 	&kp GRAVE		      &kp MINUS		    &kp SINGLE_QUOTE      &kp B 		        &kp COMMA			&kp DOT		&kp Z 
+			 	 		 		                          &trans	        &to MOU1              &kp LC(LS(LALT))  &trans
 		>;
 		};
 
     alpha3 {
 		bindings = <
-		 	 	    &kp W 		&kp F		&kp P	 	 	&kp EQUAL    	          &kp BACKSLASH			  &kp SLASH 		
-		&kp Q	 	&kp X 		&kp K		&kp V 		&kp RIGHT_PARENTHESIS 	&kp RIGHT_BRACE			&kp RIGHT_BRACKET		&kp SEMICOLON 
-			 	 		 		      &trans	&to NUM   &to AL1                  &trans
+		 	 	    &kp W 		&kp F		&kp P	 	 	&kp EQUAL    	      &kp BACKSLASH		&kp SLASH 		
+		&kp Q	 	&kp X 		&kp K		&kp V 		&sk RSHIFT 	        &sk RGUI			  &sk RCTRL		&kp SEMICOLON 
+			 	 		 		      &trans	&to NUM   &kp LC(LS(LALT))    &trans
 		>;
 		};
 		
 		num {
 		bindings = <
-				    &kp N2 	&kp N3	  &mt LSHIFT N4 		&mt RSHIFT N7 	&kp N8		   &kp N9	
-		&kp N1	&none 	&none		  &kp N5		        &kp N6		      &kp COMMA	   &kp DOT   	&kp N0
-							      &trans 		&to BT 		        &to AL1 	      &trans  	 
+				        &td NUM(2) 	&td N3	            &td NUM(4) 		&td NUM(7) 	&td NUM(8)		&td NUM(9)
+		&td NUM(1)	&none 	    &kp MINUS		        &td NUM(5)		&td NUM(6)	&kp COMMA	    &kp DOT   	&td NUM(0)
+							              &hl_l MKEYS BKSP 		&to FKEYS 		&to AL1 	  &hl_r ASP SPC  	 
 		>;
 		};
 
 		mouse1 {
 		bindings = <
-				 	&mkp  MB3		&mkp MB2 	  &mkp MB1		&mmv MOVE_LEFT_H 	  &mmv MOVE_UP_H 		&mmv MOVE_RIGHT_H 			
-		&none	&none		    &none 	    &kp LC(UP)	&kp LS(LC(TAB))  	  &mmv MOVE_DOWN_H 	&kp LC(TAB) 	     &none 
-		 			 		 				&trans 		  &mo MOU2    &to AL1             &trans		
+				 	&mkp  MB3		&mkp MB2 	&mkp MB1		&mmv MOVE_LEFT_H 	  &mmv MOVE_UP_H 		&mmv MOVE_RIGHT_H 			
+		&none	&none		    &none 	  &kp LC(UP)	&kp LS(LC(TAB))  	  &mmv MOVE_DOWN_H 	&kp LC(TAB) 	     &none 
+		 			 		 				&trans 		&mo MOU2    &to AL1             &hl_r ASP SPC		
 		>;
 		};
 
 		mouse2 {
 		bindings = <
-				 	          &kp  LG(A)	&kp LG(V) 	&kp LG(C)		&mwh SCROLL_LEFT_H  &mwh SCROLL_UP_H 		&mwh SCROLL_RIGHT_H
-		&kp LG(LS(N4))	&none		    &none 	    &none		    &kp LG(LEFT)  		  &mwh SCROLL_DOWN_H  &kp LG(RIGHT) 	    &mwh SCROLL_UP_FAST
-		 			 		 				          &none 		  &none       &to AL1             &none	
+				 	          &none	      &none	      &td LG(T) LG(W)	   &mwh SCROLL_LEFT_H   &mwh SCROLL_UP_H 		&mwh SCROLL_RIGHT_H
+		&kp LG(LS(N4))	&none		    &none 	    &none		           &kp LG(LEFT)  		    &mwh SCROLL_DOWN_H  &kp LG(RIGHT) 	    &mwh SCROLL_UP_FAST
+		 			 		 				          &none 		  &none              &to AL1              &none	
 		>;
 		};
 
 		alphaspecials {
 		bindings = <
-				 	      &kp  LG(A)	&kp LG(V) 	&kp LG(C)		    &kp LC(LEFT) 	&none 		&kp LC(RIGHT) 			
-		&kp LG(Z)	  &none		    &none 	    &kp LSHIFT		  &none  		    &none 	  &none 	          &none 
-		 			 		 				      &none 		  &key_repeat     &none         &none		
+				 	      &td LG(Z) LG(A)	    &none	        &td LG(C) LG(V)		    &kp LC(LEFT) 	&kp LS(ENTER) 		&kp LC(RIGHT) 			
+		&sk LALT    &sk LCTRL           &sk LGUI 	    &sk LSHIFT		        &none  		    &none 	          &none 	          &none 
+		 			 		 			                &caps_word 		&key_repeat           &none         &none		
 		>;
 		};
 
 		bt {
 		bindings = <
-				            &bt BT_PRV	&bt BT_NXT	&none 			&bt BT_SEL 0 	&none	  &none	
-		&bootloader  	  &none 		  &none 		  &none 			&none 	      &none 	&none	  &bt BT_CLR
-		 	 	 				    &none	      &none       &to AL1	    &none
+				            &bt BT_PRV	&bt BT_NXT	&bt BT_CLR 			&bt BT_SEL 0 	&bt BT_SEL 1	  &none	
+		&bootloader  	  &none 		  &none 		  &none 			    &none 	      &none 	        &none	  &bootloader
+		 	 	 				    &none	      &none       &to AL1	        &none
 		>;
 		};
 
@@ -192,6 +228,14 @@
 				 	      &kp LCTRL		&kp LGUI 	&kp LSHIFT		&kp LEFT 	      &kp UP 		  &kp RIGHT 			
 		&kp LALT	  &none		    &none 	  &none		      &kp LA(LEFT)    &kp DOWN  	&kp LA(RIGHT) 	&kp ESC 
 		 			 		 				      &none 		&none         &kp ENTER       &kp TAB		
+		>;
+		};
+
+		fkeys {
+		bindings = <
+				    &kp F1 	&kp F2	  &kp F3 		&kp F7    &kp F8		&kp F9	
+		&none	  &kp F4 	&kp F5		&kp F6		&kp F10		&kp F11	  &kp F12   	&none
+							      &none 		&to BT 		&to AL1 	&none  	 
 		>;
 		};
 	};
