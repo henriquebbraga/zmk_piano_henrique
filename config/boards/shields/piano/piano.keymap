@@ -59,9 +59,9 @@
 #define FKEYS   10
 
 // OC = OPEN and CLOSE
-#define OC_PARENTHESIS LEFT_PARENTHESIS RIGHT_PARENTHESIS
-#define OC_BRACE LEFT_BRACE RIGHT_BRACE
-#define OC_BRACKET LEFT_BRACKET RIGHT_BRACKET
+#define OC_PARENTHESIS RIGHT_PARENTHESIS LEFT_PARENTHESIS
+#define OC_BRACE RIGHT_BRACE LEFT_BRACE
+#define OC_BRACKET RIGHT_BRACKET LEFT_BRACKET
 
 #define NMTD(x) LS(N ## x ##) N ## x
 
@@ -145,9 +145,9 @@
 	};
 
     };
-// 				0		1		2					3		4			5
-// 		6		7		8		9 					10		11			12 		13
-//								14	15 	16 	17		
+// 				0		1		2					3		  4			5
+// 		6		7		8		9 				10		11		12 		13
+//						14	15 	      16 	  17		
        keymap {
                 compatible = "zmk,keymap";
                 
@@ -193,7 +193,7 @@
 
 		mouse2 {
 		bindings = <
-				 	          &none	      &none	      &td LG(T) LG(W)	   &mwh SCROLL_LEFT_H   &mwh SCROLL_UP_H 		&mwh SCROLL_RIGHT_H
+				 	          &none	      &none	      &td LG(W) LG(T)	   &mwh SCROLL_LEFT_H   &mwh SCROLL_UP_H 		&mwh SCROLL_RIGHT_H
 		&kp LG(LS(N4))	&none		    &none 	    &none		           &kp LG(LEFT)  		    &mwh SCROLL_DOWN_H  &kp LG(RIGHT) 	    &mwh SCROLL_UP_FAST
 		 			 		 				          &none 		  &none              &to AL1              &none	
 		>;
@@ -201,7 +201,7 @@
 
 		alphaspecials {
 		bindings = <
-				 	      &td LG(Z) LG(A)	    &none	        &td LG(C) LG(V)		    &kp LC(LEFT) 	&kp LS(ENTER) 		&kp LC(RIGHT) 			
+				 	      &td LG(A) LG(Z) 	  &none	        &td LG(V) LG(C)	    &kp LC(LEFT) 	&kp LS(ENTER) 		&kp LC(RIGHT) 			
 		&sk LALT    &sk LCTRL           &sk LGUI 	    &sk LSHIFT		        &none  		    &none 	          &none 	          &none 
 		 			 		 			                &caps_word 		&key_repeat           &none         &none		
 		>;
@@ -211,7 +211,7 @@
 		bindings = <
 				            &bt BT_PRV	&bt BT_NXT	&bt BT_CLR 			&bt BT_SEL 0 	&bt BT_SEL 1	  &none	
 		&bootloader  	  &none 		  &none 		  &none 			    &none 	      &none 	        &none	  &bootloader
-		 	 	 				    &none	      &none       &to AL1	        &none
+		 	 	 				                &none	      &none           &to AL1	      &none
 		>;
 		};
 
