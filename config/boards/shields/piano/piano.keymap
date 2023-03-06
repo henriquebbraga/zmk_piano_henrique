@@ -185,7 +185,7 @@
 		symb {
 		bindings = <
 		            &kp LS(2) 	&kp LS(3)	          &kp LS(4) 		&kp LS(7) 	&kp LS(8)		    &kp LS(9)
-		&kp LS(1)	  &none 	    &kp none		        &kp LS(5)		  &kp LS(6)	  &kp none	      &kp none   	&kp LS(0)
+		&kp LS(1)	  &none 	    &none		            &kp LS(5)		  &kp LS(6)	  &none	          &none   	  &kp LS(0)
 		                        &hl_l MKEYS BKSP 		&none         &to AL1 	  &hl_r ASP SPC  	 
 		>;
 		};
