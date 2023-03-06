@@ -152,7 +152,7 @@
                 
     alpha1 {
 		bindings = <
-		 		            &hm_l SYMB R 	  &hl_l NUM S 	      &hm_l LSHIFT T		  &hm_r RSHIFT N 	  &hl_r NUM E     &hl_r SYMB I	  
+		 		            &hl_l SYMB R 	  &hl_l NUM S 	      &hm_l LSHIFT T		  &hm_r RSHIFT N 	  &hl_r NUM E     &hl_r SYMB I	  
 		&hm_l LALT A	  &hm_l LCTRL L	  &hm_l LGUI C	      &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H   &hm_r RGUI U    &hm_r RCTRL M  &hm_r RALT O
 			 	 		 		                    &thu_l MKEYS BKSP   &alpha2macro        &alpha3macro	    &thu_r ASP SPC	 	
 		>;
@@ -184,9 +184,9 @@
 
 		symb {
 		bindings = <
-		            &kp LS(2) 	&kp LS(3)	          &kp LS(4) 		&kp LS(7) 	&kp LS(8)		    &kp LS(9)
-		&kp LS(1)	  &none 	    &none		            &kp LS(5)		  &kp LS(6)	  &none	          &none   	  &kp LS(0)
-		                        &hl_l MKEYS BKSP 		&none         &to AL1 	  &hl_r ASP SPC  	 
+		            &kp LS(N2) 	&kp LS(N3)	        &kp LS(N4) 		&kp LS(N7) 	  &kp LS(N8)		  &kp LS(N9)
+		&kp LS(N1)	&none 	    &none		            &kp LS(N5)		&kp LS(N6)	  &none	          &none   	  &kp LS(N0)
+		                        &hl_l MKEYS BKSP 		&none         &to AL1 	    &hl_r ASP SPC  	 
 		>;
 		};
 
