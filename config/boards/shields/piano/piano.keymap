@@ -45,37 +45,19 @@
   acceleration-exponent = <1>;
 };
 
-#define L_AFTER(x) ADD_ONE_ ## x
- 
 /* Layers */
 #define AL1       0
-#define AL2       L_AFTER(AL1)
-#define AL3       L_AFTER(AL2) 
-#define NUM       L_AFTER(AL3) 
-#define SYMB      L_AFTER(NUM)	
-#define MOU1      L_AFTER(SYMB)	
-#define MOU2      L_AFTER(MOU1)	
-#define ASP       L_AFTER(MOU2) 
-#define BT        L_AFTER(ASP)	
-#define AL2CAPS   L_AFTER(BT) 
-#define MKEYS     L_AFTER(AL2CAPS) 
-#define FKEYS     L_AFTER(MKEYS)
-
-#define ADD_ONE_0 1
-#define ADD_ONE_1 2
-#define ADD_ONE_2 3
-#define ADD_ONE_3 4
-#define ADD_ONE_4 5
-#define ADD_ONE_5 6
-#define ADD_ONE_6 7
-#define ADD_ONE_7 8
-#define ADD_ONE_8 9
-#define ADD_ONE_9 10
-#define ADD_ONE_10 11
-#define ADD_ONE_11 12
-#define ADD_ONE_12 13
-#define ADD_ONE_13 14
-#define ADD_ONE_14 15
+#define AL2       1
+#define AL3       2
+#define NUM       3
+#define SYMB      4
+#define MOU1      5
+#define MOU2      6
+#define ASP       7
+#define BT        8
+#define AL2CAPS   9
+#define MKEYS     10
+#define FKEYS     11
 
 // OC = OPEN and CLOSE
 #define OC_PARENTHESIS RIGHT_PARENTHESIS LEFT_PARENTHESIS
