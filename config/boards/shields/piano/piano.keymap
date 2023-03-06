@@ -44,26 +44,27 @@
   time-to-max-speed-ms = <500>;
   acceleration-exponent = <1>;
 };
+
+#define L_AFTER(x) x + 1
  
 /* Layers */
-#define AL1     0
-#define AL2     1
-#define AL3     2
-#define NUM     3
-#define MOU1    4	
-#define MOU2    5	
-#define ASP     6
-#define BT      7	
-#define AL2CAPS 8
-#define MKEYS   9
-#define FKEYS   10
+#define AL1       0
+#define AL2       L_AFTER(AL1)
+#define AL3       L_AFTER(AL2) 
+#define NUM       L_AFTER(AL3) 
+#define SYMB      L_AFTER(NUM)	
+#define MOU1      L_AFTER(SYMB)	
+#define MOU2      L_AFTER(MOU1)	
+#define ASP       L_AFTER(MOU2) 
+#define BT        L_AFTER(ASP)	
+#define AL2CAPS   L_AFTER(BT) 
+#define MKEYS     L_AFTER(AL2CAPS) 
+#define FKEYS     L_AFTER(MKEYS)
 
 // OC = OPEN and CLOSE
 #define OC_PARENTHESIS RIGHT_PARENTHESIS LEFT_PARENTHESIS
 #define OC_BRACE RIGHT_BRACE LEFT_BRACE
 #define OC_BRACKET RIGHT_BRACKET LEFT_BRACKET
-
-#define NMTD(x) LS(N ## x ##) N ## x
 
 / { 
 
@@ -90,7 +91,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_L";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <320>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -99,7 +100,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_R";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <320>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -108,7 +109,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_L";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <320>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -117,7 +118,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_R";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <320>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -153,9 +154,9 @@
                 
     alpha1 {
 		bindings = <
-		 		            &kp R 	      &hl_l NUM S 	      &hm_l LSHIFT T		  &hm_r RSHIFT N 	  &hl_r NUM E     &kp I	  
-		&hm_l LALT A	  &hm_l LCTRL L	&hm_l LGUI C	      &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H   &hm_r RGUI U    &hm_r RCTRL M  &hm_r RALT O
-			 	 		 		                  &thu_l MKEYS BKSP   &alpha2macro        &alpha3macro	    &thu_r ASP SPC	 	
+		 		            &hm_l SYMB R 	  &hl_l NUM S 	      &hm_l LSHIFT T		  &hm_r RSHIFT N 	  &hl_r NUM E     &hl_r SYMB I	  
+		&hm_l LALT A	  &hm_l LCTRL L	  &hm_l LGUI C	      &hl_l AL2CAPS D 	 	&hl_r AL2CAPS H   &hm_r RGUI U    &hm_r RCTRL M  &hm_r RALT O
+			 	 		 		                    &thu_l MKEYS BKSP   &alpha2macro        &alpha3macro	    &thu_r ASP SPC	 	
 		>;
 		};
 
@@ -177,9 +178,17 @@
 		
 		num {
 		bindings = <
-				        &td NMTD(2) 	  &td NMTD(3)	          &td NMTD(4) 		&td NMTD(7) 	&td NMTD(8)		&td NMTD(9)
-		&td NMTD(1)	&none 	        &kp MINUS		          &td NMTD(5)		  &td NMTD(6)	  &kp COMMA	    &kp DOT   	&td NMTD(0)
-		                            &hl_l MKEYS BKSP 		  &to FKEYS 		  &to AL1 	    &hl_r ASP SPC  	 
+		        &kp N2 	    &kp N3	            &kp N4 		  &kp N7 	  &kp N8		      &kp N9
+		&kp N1	&none 	    &kp MINUS		        &kp N5		  &kp N6	  &kp COMMA	      &kp DOT   	&kp N0
+		                    &hl_l MKEYS BKSP 		&to FKEYS   &to AL1 	&hl_r ASP SPC  	 
+		>;
+		};
+
+		symb {
+		bindings = <
+		            &kp LS(2) 	&kp LS(3)	          &kp LS(4) 		&kp LS(7) 	&kp LS(8)		    &kp LS(9)
+		&kp LS(1)	  &none 	    &kp none		        &kp LS(5)		  &kp LS(6)	  &kp none	      &kp none   	&kp LS(0)
+		                        &hl_l MKEYS BKSP 		&none         &to AL1 	  &hl_r ASP SPC  	 
 		>;
 		};
 
@@ -238,5 +247,6 @@
 							      &none 		&to BT 		&to AL1 	&none  	 
 		>;
 		};
+
 	};
 };
