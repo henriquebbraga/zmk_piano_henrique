@@ -89,7 +89,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_L";
             #binding-cells = <2>;
-            tapping-term-ms = <320>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -98,7 +98,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_R";
             #binding-cells = <2>;
-            tapping-term-ms = <320>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -107,7 +107,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_L";
             #binding-cells = <2>;
-            tapping-term-ms = <320>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -116,7 +116,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_R";
             #binding-cells = <2>;
-            tapping-term-ms = <320>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
