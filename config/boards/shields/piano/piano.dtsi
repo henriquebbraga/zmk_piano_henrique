@@ -41,15 +41,13 @@
         ;
     };
 
-    backlight: pwmleds {
-        compatible = "pwm-leds";
-        label = "Backlight LEDs";
-        pwm_led_0 {
-            pwms = <&pwm0 15>;
-            label = "board led";
-        };
-    };
+    /* backlight: pwmleds { */
+    /*     compatible = "pwm-leds"; */
+    /*     label = "Backlight LEDs"; */
+    /*     pwm_led_0 { */
+    /*         pwms = <&pwm0 15>; */
+    /*         label = "board led"; */
+    /*     }; */
+    /* }; */
 
-    chosen {
-    };
 };
