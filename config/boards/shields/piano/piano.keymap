@@ -8,7 +8,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/backlight.h>
+
+#define BL_ON_CMD 0
+#define BL_OFF_CMD 1
+#define BL_ON BL_ON_CMD 0
+#define BL_OFF BL_OFF_CMD 0
 
 #define M_MOVE_SPEED 1600
 #define MOVE_UP_H MOVE_VERT(-M_MOVE_SPEED)
