@@ -148,22 +148,22 @@
 		#binding-cells = <0>;
 		bindings = < &sl AL3 >;
 	};
-	enter_bt_lay: behavior_macro_3 {
-		compatible = "zmk,behavior-macro";
-		label = "BT backlight ON";
-		#binding-cells = <0>;
-		bindings =    < &to BT >
-                , < &bl BL_ON >
-                ;
-	};
-	leave_bt_lay: behavior_macro_4 {
-		compatible = "zmk,behavior-macro";
-		label = "BT backlight OFF";
-		#binding-cells = <0>;
-		bindings =    < &to AL1 >
-                , < &bl BL_OFF >
-                ;
-	};
+	/* enter_bt_lay: behavior_macro_3 { */
+	/* 	compatible = "zmk,behavior-macro"; */
+	/* 	label = "BT backlight ON"; */
+	/* 	#binding-cells = <0>; */
+	/* 	bindings =    < &to BT > */
+ /*                , < &bl BL_ON > */
+ /*                ; */
+	/* }; */
+	/* leave_bt_lay: behavior_macro_4 { */
+	/* 	compatible = "zmk,behavior-macro"; */
+	/* 	label = "BT backlight OFF"; */
+	/* 	#binding-cells = <0>; */
+	/* 	bindings =    < &to AL1 > */
+ /*                , < &bl BL_OFF > */
+ /*                ; */
+	/* }; */
 
     };
 // 				0		1		2					3		  4			5
@@ -248,7 +248,7 @@
 		bindings = <
 				            &bt BT_PRV	&bt BT_NXT	&bt BT_CLR 			&bt BT_SEL 0 	  &bt BT_SEL 1	  &none	
 		&bootloader  	  &none 		  &none 		  &none 			    &none 	        &none 	        &none	  &bootloader
-		 	 	 				                &none	      &none           &leave_bt_lay	  &none
+		 	 	 				                &none	      &none           &to AL1	        &none
 		>;
 		};
 
@@ -272,7 +272,7 @@
 		bindings = <
 				    &kp F1 	&kp F2	  &kp F3 		      &kp F7    &kp F8		&kp F9	
 		&none	  &kp F4 	&kp F5		&kp F6		      &kp F10		&kp F11	  &kp F12   	&none
-							      &none 		&enter_bt_lay 	&to AL1 	&none  	 
+							      &none 		&to BT 	        &to AL1 	&none  	 
 		>;
 		};
 
