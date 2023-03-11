@@ -177,7 +177,7 @@
 
     alpha2 {
 		bindings = <
-		 	 	                &kp LEFT_BRACE 	&td LEFT_BRACKET	  &td LEFT_PARENTHESIS	  &kp G    	        &kp J			    &kp Y 		
+		 	 	                &kp LEFT_BRACE 	&kp LEFT_BRACKET	  &kp LEFT_PARENTHESIS	  &kp G    	        &kp J			    &kp Y 		
 		&kp DOUBLE_QUOTES	 	&none		        &none		            &none                   &kp B 		        &kp COMMA			&kp DOT		&kp Z 
 			 	 		 		                        &trans	            &to MOU1                &kp LC(LS(LALT))  &trans
 		>;
