@@ -65,11 +65,6 @@
 #define MKEYS     11
 #define FKEYS     12
 
-// OC = OPEN and CLOSE
-#define OC_PARENTHESIS RIGHT_PARENTHESIS LEFT_PARENTHESIS
-#define OC_BRACE RIGHT_BRACE LEFT_BRACE
-#define OC_BRACKET RIGHT_BRACKET LEFT_BRACKET
-
 / { 
 
     behaviors {
@@ -78,7 +73,7 @@
             label = "THUMB_MODS_L";
             #binding-cells = <2>;
             tapping-term-ms = <120>;
-            quick-tap-ms = <50>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -87,7 +82,7 @@
             label = "THUMB_MODS_R";
             #binding-cells = <2>;
             tapping-term-ms = <120>;
-            quick-tap-ms = <50>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -182,16 +177,16 @@
 
     alpha2 {
 		bindings = <
-		 	 	                &td OC_BRACKET 	  &td OC_BRACE	  &td OC_PARENTHESIS	  &kp G    	        &kp J			    &kp Y 		
-		&kp DOUBLE_QUOTES	 	&kp GRAVE		      &kp MINUS		    &none                 &kp B 		        &kp COMMA			&kp DOT		&kp Z 
-			 	 		 		                          &trans	        &to MOU1              &kp LC(LS(LALT))  &trans
+		 	 	                &kp LEFT_BRACE 	&td LEFT_BRACKET	  &td LEFT_PARENTHESIS	  &kp G    	        &kp J			    &kp Y 		
+		&kp DOUBLE_QUOTES	 	&none		        &none		            &none                   &kp B 		        &kp COMMA			&kp DOT		&kp Z 
+			 	 		 		                        &trans	            &to MOU1                &kp LC(LS(LALT))  &trans
 		>;
 		};
 
     alpha3 {
 		bindings = <
 		 	 	    &kp W 		&kp F		&kp P	 	 	&kp EQUAL    	      &kp BACKSLASH		&kp SLASH 		
-		&kp Q	 	&kp X 		&kp K		&kp V 		&sk RSHIFT 	        &sk RGUI			  &sk RCTRL		&kp SEMICOLON 
+		&kp Q	 	&kp X 		&kp K		&kp V 		&none 	            &none			      &none		&kp SEMICOLON 
 			 	 		 		      &trans	&to NUM   &kp LC(LS(LALT))    &trans
 		>;
 		};
@@ -214,9 +209,9 @@
 
 		symb2 {
 		bindings = <
-		                    &kp LS(GRAVE) 	&kp LS(MINUS)	        &none 		    &kp LS(EQUAL) 	&kp LS(BACKSLASH)		&kp LS(SLASH)
-		&kp SINGLE_QUOTE	  &none 	        &none		              &none		      &none	          &none	              &none   	      &kp LS(SEMICOLON)
-		                                    &hl_l MKEYS BKSP 		  &none         &to AL1 	      &hl_r ASP SPC  	 
+		                    &kp LS(GRAVE) 	&kp LS(MINUS)	    &none 	&kp LS(EQUAL) 	        &kp LS(BACKSLASH)		&kp LS(SLASH)
+		&kp SINGLE_QUOTE	  &kp GRAVE 	    &kp MINUS		      &none		&kp RIGHT_PARENTHESIS	  &kp RIGHT_BRACKET	  &kp RIGHT_BRACE   &kp LS(SEMICOLON)
+		                                    &hl_l MKEYS BKSP  &none   &to AL1 	              &hl_r ASP SPC  	 
 		>;
 		};
 
