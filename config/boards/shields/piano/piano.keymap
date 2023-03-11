@@ -177,9 +177,9 @@
 
     alpha2 {
 		bindings = <
-		 	 	                &kp LEFT_BRACE 	&kp LEFT_BRACKET	  &kp LEFT_PARENTHESIS	  &kp G    	        &kp J			    &kp Y 		
-		&kp DOUBLE_QUOTES	 	&none		        &none		            &none                   &kp B 		        &kp COMMA			&kp DOT		&kp Z 
-			 	 		 		                        &trans	            &to MOU1                &kp LC(LS(LALT))  &trans
+		 	 	                &kp LEFT_BRACKET 	&kp LEFT_BRACE	  &kp LEFT_PARENTHESIS	  &kp G    	        &kp J			    &kp Y 		
+		&kp DOUBLE_QUOTES	 	&none		          &none		          &none                   &kp B 		        &kp COMMA			&kp DOT		&kp Z 
+			 	 		 		                          &trans	          &to MOU1                &kp LC(LS(LALT))  &trans
 		>;
 		};
 
@@ -210,7 +210,7 @@
 		symb2 {
 		bindings = <
 		                    &kp LS(GRAVE) 	&kp LS(MINUS)	    &none 	&kp LS(EQUAL) 	        &kp LS(BACKSLASH)		&kp LS(SLASH)
-		&kp SINGLE_QUOTE	  &kp GRAVE 	    &kp MINUS		      &none		&kp RIGHT_PARENTHESIS	  &kp RIGHT_BRACKET	  &kp RIGHT_BRACE   &kp LS(SEMICOLON)
+		&kp SINGLE_QUOTE	  &kp GRAVE 	    &kp MINUS		      &none		&kp RIGHT_PARENTHESIS	  &kp RIGHT_BRACE	    &kp RIGHT_BRACKET   &kp LS(SEMICOLON)
 		                                    &hl_l MKEYS BKSP  &none   &to AL1 	              &hl_r ASP SPC  	 
 		>;
 		};
